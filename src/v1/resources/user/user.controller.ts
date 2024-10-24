@@ -28,7 +28,7 @@ export default class UserController extends Controller {
     res.exec();
   };
 
-  public login = async (req: Request, res: Response) => {
+  public login = async (req: Request<{}, {}, UserLoginDTO>, res: Response) => {
     const {
       body: { email, password },
     } = req;
@@ -45,6 +45,19 @@ export default class UserController extends Controller {
 
     req.operation = this.service.me;
     req.args = { user };
+
+    res.exec();
+  };
+
+  public swapCard = async (req: Request<{}, {}, UserSwapDTO>, res: Response) => {
+    const {
+      body: { credId, cardId },
+      user: { id: userId },
+    } = req;
+
+    req.message = 'Attempting to swap card';
+    req.operation = this.service.swapCard;
+    req.args = { userId, credId, cardId };
 
     res.exec();
   };

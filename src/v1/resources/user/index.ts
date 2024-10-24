@@ -10,5 +10,6 @@ export default class User extends Resource {
     this.router.post('/signup', this.controller.signup);
     this.router.post('/login', this.controller.login);
     this.router.get('/me', userAuth, this.controller.me);
+    this.router.post('/swap', userAuth, this.controller.swapCard);
   }
 }

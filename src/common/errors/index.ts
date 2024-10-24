@@ -19,3 +19,13 @@ export class IncorrectAuthError extends Error {
   static message = 'Incorrect email or password';
   message = IncorrectAuthError.message;
 }
+
+export class UnknownClientError extends Error {
+  static message = 'Attempted to auth with unknown client';
+  message = UnknownClientError.message;
+}
+
+export class UnknownCardError extends Error {
+  static message = 'Could not find card info';
+  message = UnknownCardError.message;
+}

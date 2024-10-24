@@ -14,6 +14,12 @@ declare global {
   }
 
   export interface UserMeDTO {
-    user: User,
+    user: User;
+  }
+
+  export interface UserSwapDTO {
+    credId: string;
+    cardId: string;
+    userId?: string;
   }
 }

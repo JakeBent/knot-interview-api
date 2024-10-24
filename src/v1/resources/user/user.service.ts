@@ -2,6 +2,8 @@ import { Service } from '@base';
 import {
   DuplicateUserError,
   IncorrectAuthError,
+  UnknownCardError,
+  UnknownClientError,
 } from '@common/errors';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -88,4 +90,42 @@ export default class UserService extends Service {
       },
     },
   });
+
+  public swapCard = async ({
+    credId,
+    cardId,
+    userId,
+  }: UserSwapDTO) => {
+    const user = await this.db.user.findFirst({ where: { id: userId } });
+
+    if (!user) {
+      throw new IncorrectAuthError();
+    }
+
+    const creds = await this.db.credentials.findFirst({
+      where: {
+        userId,
+        id: credId,
+      },
+    });
+
+    if (!creds) {
+      throw new UnknownClientError();
+    }
+
+    const card = await this.db.card.findFirst({
+      where: {
+        userId,
+        id: cardId,
+      },
+    });
+
+    if (!card) {
+      throw new UnknownCardError();
+    }
+
+    await this.apiClient.swapCard(creds, card);
+
+    return {};
+  };
 }

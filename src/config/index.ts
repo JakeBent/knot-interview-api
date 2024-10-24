@@ -29,6 +29,14 @@ export default class Config {
     },
   };
 
+  public netflixApiUrl = 'https://netflix.com';
+  public netflixApiKey = 'asdfasdf';
+  public netflixApiSecret = 'asdfasdf';
+
+  public instacartApiUrl = 'https://instacart.com';
+  public instacartApiKey = 'asdfasdf';
+  public instacartApiSecret = 'asdfasdf';
+
   static get sharedConfig(): Config {
     if (!this._sharedConfig) {
       this._sharedConfig = new Config();
