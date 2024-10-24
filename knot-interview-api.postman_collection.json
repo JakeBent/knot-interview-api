@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "08359ee5-ab27-4c9a-ae98-441b215d279c",
+		"name": "knot-interview-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1329320",
+		"_collection_link": "https://dark-meteor-790260.postman.co/workspace/skinapse~a30230a3-eeca-4b0a-bd9b-4c14dc4fa639/collection/1329320-08359ee5-ab27-4c9a-ae98-441b215d279c?action=share&source=collection_link&creator=1329320"
+	},
+	"item": [
+		{
+			"name": "/v1/ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/v1/ping",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"jake@example.com\",\n    \"password\": \"asdfasdf\",\n    \"firstName\": \"Jake\",\n    \"lastName\": \"Benton\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/v1/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+          "raw": "{\n    \"email\": \"jake@example.com\",\n    \"password\": \"asdfasdf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/v1/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0Y2FjNjI1YTZjMzBhMWVmNmY5M2RmYSIsImVtYWlsIjoiamFrZUBjaXR5c3VpdGVzLnVzIiwiZmlyc3ROYW1lIjoiSmFrZSIsImxhc3ROYW1lIjoiQmVudG9uIiwiY3JlYXRlZEF0IjoiMjAyMy0wOC0wMlQyMTowOTo1Ny42ODZaIiwidXBkYXRlZEF0IjoiMjAyMy0wOC0wMlQyMTowOTo1Ny42ODZaIiwiX192IjowLCJpZCI6IjY0Y2FjNjI1YTZjMzBhMWVmNmY5M2RmYSJ9LCJpYXQiOjE2OTE1MDUxMjYsImV4cCI6MTY5MTc2NDMyNn0.75m-2q6jCaaxLav87CBhex7rpgNWPaNZQZzmFXOJWKY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3001/v1/users/me",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/credentials/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYmRjODVjZTktZTRiOC00YzAyLWFmZjMtYjE4NzQwZTU4ZGIzIiwiZW1haWwiOiJqYWtlQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkSWxSUXl2YXc4RS42RGp6VE1aNU1ZdU9Sa3NSS3BjdWo5bWJLbXFrT0IuMEVnTlQyRUI1cUMiLCJmaXJzdE5hbWUiOiJKYWtlIiwibGFzdE5hbWUiOiJCZW50b24ifSwiaWF0IjoxNzI5ODAyNzQzLCJleHAiOjE3MzAwNjE5NDN9.-DHbhVn55YtJxIaNDt09aMtc7R5hBQeAHQlFHeBLEpo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"website\": \"instacart.com\",\n    \"username\": \"jake@example.com\",\n    \"password\": \"asdfasdfasdf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/v1/credentials/",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"credentials",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/credentials/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZGY3NDBkNTAtYjBlMC00NWY4LTk0YzEtMGM1M2ZmNjFhN2I1IiwiZW1haWwiOiJqYWtlQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkL0xOQkhrLjh0NXFjcTl2dnlrd3hUT2tSV215dXBpdTM1NFlIS0lsUG1Jamo4NERvU1dLSTIiLCJmaXJzdE5hbWUiOiJKYWtlIiwibGFzdE5hbWUiOiJCZW50b24ifSwiaWF0IjoxNzI5NzkxMTI3LCJleHAiOjE3MzAwNTAzMjd9.JEzSV_oXCvL52CdidzpOkVdx_5Ehw5ClMZLhAG8ZqQk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/v1/credentials/",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"credentials",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/cards/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYmRjODVjZTktZTRiOC00YzAyLWFmZjMtYjE4NzQwZTU4ZGIzIiwiZW1haWwiOiJqYWtlQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkSWxSUXl2YXc4RS42RGp6VE1aNU1ZdU9Sa3NSS3BjdWo5bWJLbXFrT0IuMEVnTlQyRUI1cUMiLCJmaXJzdE5hbWUiOiJKYWtlIiwibGFzdE5hbWUiOiJCZW50b24ifSwiaWF0IjoxNzI5ODAyNzQzLCJleHAiOjE3MzAwNjE5NDN9.-DHbhVn55YtJxIaNDt09aMtc7R5hBQeAHQlFHeBLEpo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jacob Benton\",\n    \"network\": \"Visa\",\n    \"number\": \"4242424242424242\",\n    \"expMonth\": \"10\",\n    \"expYear\": \"26\",\n    \"cvv\": \"1234\",\n    \"zip\": \"10000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/v1/cards/",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"cards",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/cards/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWM5MTAzNmUtYTE1OC00MDIyLThkM2EtMjVhYTRhODZiN2VhIiwiZW1haWwiOiJqYWtlQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkdlZXQnlBQy9OUzc2NUNBeFE3UE9NZXpGTlJyNzE2VFVmMTJndmJ6ZFhJci9Ec202cVVBb0MiLCJmaXJzdE5hbWUiOiJKYWtlIiwibGFzdE5hbWUiOiJCZW50b24ifSwiaWF0IjoxNzI5ODAxMDQxLCJleHAiOjE3MzAwNjAyNDF9.hmw2xBQQq8iZUqftuWN3FU8q-Y5errdsq8C_1raiUTM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/v1/cards/",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"cards",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/users/swap",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiYmRjODVjZTktZTRiOC00YzAyLWFmZjMtYjE4NzQwZTU4ZGIzIiwiZW1haWwiOiJqYWtlQGV4YW1wbGUuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkSWxSUXl2YXc4RS42RGp6VE1aNU1ZdU9Sa3NSS3BjdWo5bWJLbXFrT0IuMEVnTlQyRUI1cUMiLCJmaXJzdE5hbWUiOiJKYWtlIiwibGFzdE5hbWUiOiJCZW50b24ifSwiaWF0IjoxNzI5ODAyNzQzLCJleHAiOjE3MzAwNjE5NDN9.-DHbhVn55YtJxIaNDt09aMtc7R5hBQeAHQlFHeBLEpo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"credId\": \"6c5c1ed6-f8de-469a-a2c1-fec8bbe724d8\",\n    \"cardId\": \"08ef46a3-7642-45de-b4c6-2747cf15d462\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/v1/users/swap",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"v1",
+						"users",
+						"swap"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
