@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./src/",
+    "paths": {
+      "@config": ["config"],
+      "@v1": ["v1"],
+      "@v1/*": ["v1/*"],
+      "@logger": ["common/logger"],
+      "@common/*": ["common/*"],
+      "@errors": ["commmon/errors"],
+      "@base": ["v1/resources/base"]
+    }
+  }
+}
