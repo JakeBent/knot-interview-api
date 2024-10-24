@@ -8,9 +8,34 @@ datasource db {
 }
 
 model User {
+  id          String   @id @default(uuid())
+  email       String   @unique
+  password    String
+  firstName   String
+  lastName    String
+
+  credentials Credentials[]
+  cards       Card[]
+}
+
+model Credentials {
   id        String   @id @default(uuid())
-  email     String   @unique
-  password  String
-  firstName String
-  lastName  String
+  website   String
+  username  String   /// @encrypted
+  password  String   /// @encrypted
+
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+}
+
+model Card {
+  id        String   @id @default(uuid())
+  name      String   /// @encrypted
+  number    String   /// @encrypted
+  expMonth  Int      /// @encrypted
+  expYear   Int      /// @encrypted
+  zip       String
+
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
 }
