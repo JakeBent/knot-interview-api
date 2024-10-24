@@ -17,9 +17,10 @@ Authenticated requests check for `x-auth-header` header. Just paste the JWT as t
 1. clone repo
 2. install dependencies `yarn install`
 3. copy environment file example `cp .env.example .env`
-4. make sure postgres is running and reachable, update `.env` with connection string
-4. prepare the database `npx prisma db push`
-5. start app `yarn start`
+4. create encryption key `npx cloak generate` and add it to `.env`
+5. make sure postgres is running and reachable, update `.env` with connection string
+6. prepare the database `npx prisma db push`
+7. start app `yarn start`
 
 ## Interacting with the API
 
