@@ -9,9 +9,11 @@ export default class CardController extends Controller {
     const {
       body: {
         name,
+        network,
         number,
         expMonth,
         expYear,
+        cvv,
         zip,
       },
       user: {
@@ -24,9 +26,11 @@ export default class CardController extends Controller {
     req.args = {
       userId,
       name,
+      network,
       number,
       expMonth,
       expYear,
+      cvv,
       zip,
     };
     req.successCode = 201;

@@ -65,5 +65,27 @@ export default class UserService extends Service {
     return token;
   };
 
-  public me = async ({ user }: UserMeDTO) => this.db.user.findFirst({ where: { id: user.id } });
+  public me = async ({ user }: UserMeDTO) => this.db.user.findFirst({
+    where: { id: user.id },
+    select: {
+      id: true,
+      email: true,
+      firstName: true,
+      lastName: true,
+      credentials: {
+        select: {
+          id: true,
+          website: true,
+          username: true,
+        },
+      },
+      cards: {
+        select: {
+          id: true,
+          network: true,
+          lastFour: true,
+        },
+      },
+    },
+  });
 }
